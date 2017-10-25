@@ -1,0 +1,16 @@
+apiVersion: extensions/v1beta1
+kind: Deployment
+metadata:
+  name: curri-fe
+spec:
+  replicas: 1
+  template:
+    metadata:
+      labels:
+        app: curri-fe
+    spec:
+      containers:
+      - name: w2f2-fe
+        image: %REGISTRY%/%APP_NAME%:%VERSION%
+        ports:
+        - containerPort: 80
