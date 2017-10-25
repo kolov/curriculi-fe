@@ -1,0 +1,28 @@
+<h1>Login</h1>
+
+<div *ngIf="showError" role="alert">
+  {{errorMessage}}
+</div>
+
+<form [formGroup]="loginForm" (ngSubmit)="login()">
+  <fieldset>
+    <label>
+      E-mail
+      <input formControlName="email" type="email" autocomplete="email">
+    </label>
+    <ul *ngIf="loginForm.controls['email'].touched && loginForm.controls['email'].invalid" role="alert">
+      <li *ngIf="loginForm.controls['email'].hasError('required')">This field is required.</li>
+      <li *ngIf="loginForm.controls['email'].hasError('email')">This is not a valid e-mail address.</li>
+    </ul>
+
+    <label>
+      Password
+      <input formControlName="password" type="password" autocomplete="current-password">
+    </label>
+    <ul *ngIf="loginForm.controls['password'].touched && loginForm.controls['password'].invalid" role="alert">
+      <li *ngIf="loginForm.controls['password'].hasError('required')">This field is required.</li>
+    </ul>
+
+    <button [disabled]="loginForm.invalid">Login</button>
+  </fieldset>
+</form>

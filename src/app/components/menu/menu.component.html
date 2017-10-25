@@ -1,0 +1,27 @@
+<nav class="navbar navbar-expand-lg navbar-light bg-light">
+  <div class="container">
+    <a routerLink="/" class="navbar-brand">Curricu.li</a>
+
+    <button class="navbar-toggler" type="button" data-toggle="collapse" data-target="#mainNavigation" aria-controls="mainNavigation" aria-expanded="false" aria-label="Toggle navigation">
+      <span class="navbar-toggler-icon"></span>
+    </button>
+
+    <div class="collapse navbar-collapse" id="mainNavigation">
+      <ul class="navbar-nav mr-auto">
+        <li class="nav-item">
+          <a class="nav-link" routerLink="/companies" routerLinkActive="active">Companies</a>
+        </li>
+
+        <li class="nav-item">
+          <a class="nav-link" routerLink="/about" routerLinkActive="active">About</a>
+        </li>
+
+        <li *ngIf="!(isLoggedIn$ | async)" class="nav-item">
+          <a class="nav-link" routerLink="/login" routerLinkActive="active">Login</a>
+        </li>
+      </ul>
+
+      <button *ngIf="isLoggedIn$ | async" class="btn btn-primary btn-sm" (click)="logout()">Logout</button>
+    </div>
+  </div>
+</nav>
