@@ -2,20 +2,12 @@ const cookiejar = require('cookiejar');
 
 const PROXY_CONFIG = {
   "/authenticate": {
-    "target": "https://bat.dev.tnt-digital.com",
+    "target": "https://xxx",
     "headers": {
-      "referer": "https://bat.dev.tnt-digital.com/"
+      "referer": "https://xxx/"
     },
     "changeOrigin": true,
     "onProxyRes": disableSetCookieSecureAttribute
-  },
-  "/service": {
-    "target": "https://bat.dev.tnt-digital.com",
-    "headers": {
-      "host": 'bat.dev.tnt-digital.com',
-      "referer": "https://bat.dev.tnt-digital.com/"
-    },
-    "changeOrigin": true
   }
 };
 

@@ -1,7 +1,6 @@
-# FedexTntAdmin
+# Curri-fe
 
-Develop environment: https://fedex-tnt-admin.dev.tnt-digital.com/
-
+ 
 Prerequisites
 - Node 8
 - Yarn

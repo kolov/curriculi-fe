@@ -1,6 +1,6 @@
 import { FedexTntAdminPage } from './app.po';
 
-describe('fedex-tnt-admin App', () => {
+describe('curri-fe App', () => {
   let page: FedexTntAdminPage;
 
   beforeEach(() => {
